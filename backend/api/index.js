@@ -6,7 +6,7 @@ const cors = require('cors');
 const app = express();
 const PORT = 5000;
 
-const MONGO_URI = 'mongodb+srv://Kp:admin%40123@cluster1.2xten.mongodb.net/?retryWrites=true&w=majority&appName=Cluster1';
+const MONGO_URI = 'mongodb+srv://username:password@cluster1.2xten.mongodb.net/contactForm?retryWrites=true&w=majority';
 
 // Middleware
 app.use(cors());
