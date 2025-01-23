@@ -14,7 +14,12 @@
   font-weight: bold;
   margin-top: 10px;
 }
-
+.error-message {
+  color: rgb(1, 15, 170); /* Change to the color of your choice */
+  font-size: 16px;
+  font-weight: bold;
+  margin-top: 10px;
+}
 .connect-heading {
   position: absolute;
   top: 10%; /* Adjust to position the heading correctly */
