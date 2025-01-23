@@ -1,0 +1,95 @@
+.contact-container {
+    position: relative;
+    overflow: hidden;
+    background-color: #0a0a0a; /* Black background */
+    height: 100vh;
+   
+  }
+  
+  .success-message {
+    color: rgb(1, 15, 170); /* Change to the color of your choice */
+    font-size: 16px;
+    font-weight: bold;
+    margin-top: 10px;
+  }
+  
+
+  .lottie-email {
+    max-width: 600px; /* Increase the size of the SVG */
+    margin: 0 auto;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 1; /* Lower z-index to ensure form is above */
+  }
+  
+  .connect-heading {
+    position: absolute;
+    top: 20%; /* Adjust this to position the heading correctly */
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 2rem; /* Set the size of the heading */
+    color: #fff; /* White text color */
+    font-weight: bold;
+    text-align: center;
+    z-index: 2; /* Ensure it stays above the SVG */
+  }
+  
+  .contact-section {
+    position: relative;
+    padding: 2rem 1rem;
+    z-index: 3; /* Form should be above the SVG and heading */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+  }
+  
+  .form-container {
+    max-width: 400px; /* Keep the form compact */
+    width: 100%;
+    z-index: 3;
+  }
+  
+  .contact-form label {
+    display: block;
+    margin-bottom: 0.8rem;
+    color: #ccc; /* Light gray for label text */
+  }
+  
+  .contact-form input,
+  .contact-form textarea {
+    width: 100%;
+    padding: 0.75rem;
+    margin-top: 0.5rem;
+    background-color: transparent; 
+    border: 2px solid #555; 
+    border-radius: 20px;
+    color: #fff; 
+    font-size: 1rem;
+    transition: border-color 0.3s ease; 
+  }
+  
+  .contact-form input:focus,
+  .contact-form textarea:focus {
+    border-color: var(--primary_color); 
+    outline: none; 
+  }
+  
+  .contact-form button {
+    width: 100%;
+    padding: 0.75rem;
+    margin-top: 0.5rem;
+    background-color: transparent; 
+    border: 2px solid #555; 
+    border-radius: 20px; 
+    color: #fff; 
+    font-size: 1rem;
+    transition: border-color 0.3s ease;
+  }
+  
+  .contact-form button:hover {
+    background-color: #0213ce; /* Darken the button on hover */
+  }
+  

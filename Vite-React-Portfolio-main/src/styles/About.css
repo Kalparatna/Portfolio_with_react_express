@@ -1,0 +1,84 @@
+/* General Styling for About Section */
+.about-section {
+    padding: 100px 0;
+    background: #0a0a0a;
+    color: #fff;
+    text-align: center;
+    width: 100%; /* Ensure the section spans full width */
+    margin: 0; /* Remove any default margins */
+}
+
+/* Container that holds the content */
+.container {
+    padding: 0 15px; /* Optional: If you need some spacing for small screens */
+    max-width: 100%; /* Ensure container spans the full width */
+    padding-top: 50px;
+    padding-bottom: 50px;
+}
+
+/* Fix for row (columns inside it) to take up full width */
+.row {
+    margin-left: 0;
+    margin-right: 0;
+}
+
+/* Styling for the About Title */
+.about-title {
+    font-size: 3.5rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    margin-bottom: 20px;
+    animation: fadeIn 1s ease-out;
+}
+
+/* Styling for the About Description */
+.about-description {
+    font-size: 1.8rem;
+    font-weight: 400;
+    opacity: 0.8;
+    line-height: 1.6;
+    margin-bottom: 30px;
+}
+
+/* Styling for the About Image */
+.about-img {
+    width: 350px;
+    height: 350px;
+    object-fit: cover;
+    border-radius: 50%;
+    border: 5px solid #fff;
+    box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.1);
+    transition: all 0.4s ease;
+}
+
+.about-img:hover {
+    transform: scale(1.1);
+    box-shadow: 0px 0px 25px rgba(0, 0, 0, 0.2);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .about-title {
+        font-size: 2.8rem;
+    }
+
+    .about-description {
+        font-size: 1.6rem;
+    }
+
+    .about-img {
+        width: 300px;
+        height: 300px;
+    }
+}
+
+/* Keyframes for Animations */
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
