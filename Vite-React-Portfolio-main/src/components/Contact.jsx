@@ -15,7 +15,7 @@ const Contact = () => {
     e.preventDefault();
 
     try {
-      const response = await fetch('http://localhost:5000/api/contact', {  // Corrected URL for local backend
+      const response = await fetch('https://portfoliobackend-gray.vercel.app/api/contact', {  // Corrected URL for local backend
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(formData)
