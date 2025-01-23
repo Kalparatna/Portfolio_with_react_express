@@ -12,7 +12,7 @@ const MONGO_URI = 'mongodb+srv://Kp:admin%40123@cluster1.2xten.mongodb.net/conta
 app.use(cors());
 app.use(bodyParser.json());
 const corsOptions = {
-  origin: 'https://portfolio1-git-main-kalparatnas-projects.vercel.app', // Your frontend URL
+  origin: 'https://portfolio1-git-main-kalparatnas-projects.vercel.app', 'http://localhost:5173/', // Your frontend URL
   methods: 'GET,POST',
 };
 app.use(cors(corsOptions));
