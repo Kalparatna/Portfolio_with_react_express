@@ -6,18 +6,18 @@
       "use": "@vercel/react"
     },
     {
-      "src": "backend/server.js",
+      "src": "backend/api/index.js",
       "use": "@vercel/node"
     }
   ],
   "routes": [
     {
       "src": "/api/(.*)",
-      "dest": "/backend/server.js"
+      "dest": "backend/api/index.js"
     },
     {
       "src": "/(.*)",
-      "dest": "/Vite-React-Portfolio-main/$1"
+      "dest": "Vite-React-Portfolio-main/$1"
     }
   ]
 }
