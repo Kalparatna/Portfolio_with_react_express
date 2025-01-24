@@ -20,7 +20,7 @@ if (!MONGO_URI) {
 app.use(helmet());
 app.use(bodyParser.json());
 app.use(cors({
-  origin: 'https://portfolio1-git-main-kalparatnas-projects.vercel.app', 
+  origin: 'https://portfolio1-theta-gules.vercel.app', 
   methods: ['GET', 'POST'],
   allowedHeaders: ['Content-Type'], 
 }));
