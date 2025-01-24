@@ -1,10 +1,14 @@
 import React, { useState } from "react";
-import '../styles/Contacts.css';
+import "../styles/Contacts.css";
 
 const Contact = () => {
-  const [formData, setFormData] = useState({ name: '', email: '', message: '' });
-  const [successMessage, setSuccessMessage] = useState('');
-  const [errorMessage, setErrorMessage] = useState('');
+  const [formData, setFormData] = useState({
+    name: "",
+    email: "",
+    message: "",
+  });
+  const [successMessage, setSuccessMessage] = useState("");
+  const [errorMessage, setErrorMessage] = useState("");
 
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -15,20 +19,22 @@ const Contact = () => {
     e.preventDefault();
 
     try {
-      const response = await fetch('https://portfoliobackend-gray.vercel.app/api/contact', {  // Corrected URL for local backend
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify(formData)
+      const response = await fetch("https://portfoliobackend-gray.vercel.app/api/contact", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(formData),
       });
 
       if (response.ok) {
-        setSuccessMessage('Your message has been sent successfully!');
-        setFormData({ name: '', email: '', message: '' });
+        setSuccessMessage("Your message has been sent successfully!");
+        setFormData({ name: "", email: "", message: "" });
+        setErrorMessage("");
       } else {
-        setErrorMessage('An error occurred while sending your message. Please try again.');
+        const data = await response.json();
+        setErrorMessage(data.error || "An error occurred. Please try again.");
       }
-    } catch (error) {
-      setErrorMessage('Unable to connect to the server. Please try again later.');
+    } catch (err) {
+      setErrorMessage("Unable to connect to the server. Please try again later.");
     }
   };
 
@@ -76,7 +82,7 @@ const Contact = () => {
                 value={formData.message}
                 onChange={handleChange}
                 required
-              ></textarea>
+              />
             </label>
 
             <button type="submit">Submit</button>
