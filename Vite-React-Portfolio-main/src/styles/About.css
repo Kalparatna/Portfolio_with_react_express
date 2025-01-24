@@ -1,28 +1,50 @@
 /* General Styling for About Section */
 .about-section {
-    padding: 100px 0;
+    padding: 80px 20px;
     background: #0a0a0a;
     color: #fff;
-    text-align: center;
-    width: 100%; /* Ensure the section spans full width */
-    margin: 0; /* Remove any default margins */
+    width: 100%;
+    box-sizing: border-box;
 }
 
-/* Container that holds the content */
+/* Container: Centralizes content */
 .container {
-    padding: 0 15px; /* Optional: If you need some spacing for small screens */
-    max-width: 100%; /* Ensure container spans the full width */
-    padding-top: 50px;
-    padding-bottom: 50px;
+    max-width: 1200px;
+    margin: auto;
+    display: flex;
+    flex-direction: column; /* Stack content for mobile-first approach */
+    align-items: center;
+    gap: 30px; /* Space between elements */
 }
 
-/* Fix for row (columns inside it) to take up full width */
+/* Row for larger screens */
 .row {
-    margin-left: 0;
-    margin-right: 0;
+    display: flex;
+    flex-wrap: nowrap; /* Avoid wrapping on larger screens */
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
+    width: 100%;
 }
 
-/* Styling for the About Title */
+/* Left Section: Image Styling */
+.about-img {
+    width: 100%;
+    max-width: 350px;
+    height: auto;
+    object-fit: cover;
+    border-radius: 50%;
+    border: 5px solid #fff;
+    box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.3);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.about-img:hover {
+    transform: scale(1.1);
+    box-shadow: 0px 0px 30px rgba(0, 0, 0, 0.5);
+}
+
+/* Right Section: Text Styling */
 .about-title {
     font-size: 3.5rem;
     font-weight: 700;
@@ -30,55 +52,73 @@
     letter-spacing: 2px;
     margin-bottom: 20px;
     animation: fadeIn 1s ease-out;
+    text-align: left; /* Align text to the left for large screens */
 }
 
-/* Styling for the About Description */
 .about-description {
-    font-size: 1.8rem;
-    font-weight: 400;
-    opacity: 0.8;
-    line-height: 1.6;
-    margin-bottom: 30px;
-}
-
-/* Styling for the About Image */
-.about-img {
-    width: 350px;
-    height: 350px;
-    object-fit: cover;
-    border-radius: 50%;
-    border: 5px solid #fff;
-    box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.1);
-    transition: all 0.4s ease;
-}
-
-.about-img:hover {
-    transform: scale(1.1);
-    box-shadow: 0px 0px 25px rgba(0, 0, 0, 0.2);
+    font-size: 1.6rem;
+    line-height: 1.8;
+    opacity: 0.9;
+    text-align: justify;
 }
 
 /* Responsive Design */
-@media (max-width: 768px) {
+
+/* For Tablets */
+@media (max-width: 992px) {
+    .row {
+        flex-wrap: wrap; /* Allow wrapping for smaller screens */
+        justify-content: center;
+    }
+
     .about-title {
-        font-size: 2.8rem;
+        font-size: 3rem;
+        text-align: center; /* Center-align text */
     }
 
     .about-description {
-        font-size: 1.6rem;
+        font-size: 1.4rem;
+        text-align: justify;
     }
 
     .about-img {
-        width: 300px;
-        height: 300px;
+        max-width: 300px;
     }
 }
 
-/* Keyframes for Animations */
+/* For Mobiles */
+@media (max-width: 576px) {
+    .container {
+        gap: 20px;
+    }
+
+    .row {
+        flex-direction: column; /* Stack image and text vertically */
+    }
+
+    .about-title {
+        font-size: 2.5rem;
+        text-align: center;
+    }
+
+    .about-description {
+        font-size: 1.2rem;
+    }
+
+    .about-img {
+        max-width: 250px;
+        margin: 0 auto; /* Center the image */
+    }
+}
+
+/* Keyframes for Animation */
 @keyframes fadeIn {
     0% {
         opacity: 0;
+        transform: translateY(20px);
     }
     100% {
         opacity: 1;
+        transform: translateY(0);
     }
 }
