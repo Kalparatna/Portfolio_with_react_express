@@ -19,16 +19,15 @@ if (!MONGO_URI) {
 app.use(helmet());
 app.use(bodyParser.json());
 app.use(cors({
-  origin: [ 'https://portfolio1-git-main-kalparatnas-projects.vercel.app/'], // Add your React frontend origin here
+  origin: 'https://portfolio1-git-main-kalparatnas-projects.vercel.app', // Add your React frontend origin here
   methods: ['GET', 'POST'],
+  allowedHeaders: ['Content-Type'], // Make sure headers are allowed
 }));
 
-// Connect to MongoDB
 // Connect to MongoDB
 mongoose.connect(MONGO_URI)
   .then(() => console.log('Connected to MongoDB'))
   .catch((error) => console.error('Error connecting to MongoDB:', error));
-
 
 // Mongoose Schema and Model
 const ContactSchema = new mongoose.Schema({
