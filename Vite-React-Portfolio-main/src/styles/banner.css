@@ -1,3 +1,12 @@
+
+/* Prevent Horizontal Scrolling (Overflow) */
+html, body {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    overflow-x: hidden; /* Prevent horizontal scrolling */
+}
+
 /* General Styling for Banner Section */
 .banner {
     padding: 120px 0;
