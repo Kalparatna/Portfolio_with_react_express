@@ -1,4 +1,3 @@
-
 /* Prevent Horizontal Scrolling (Overflow) */
 html, body {
     margin: 0;
@@ -9,49 +8,69 @@ html, body {
 
 /* General Styling for Banner Section */
 .banner {
-    padding: 120px 0;
-    height: auto;
+    padding: 100px 20px;
     background: #0a0a0a;
     color: #fff;
-    text-align: center;
+    width: 100%; /* Ensure the banner spans full width */
 }
 
-.banner h3 {
-    font-size: 3.4rem;
+/* Flex Container */
+.container {
+    max-width: 1200px;
+    margin: auto;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 15px; /* Add padding to avoid edge clipping */
+    box-sizing: border-box; /* Ensures padding doesn't overflow */
+}
+
+/* Left Section: Text Block Styling */
+.textblock {
+    flex: 1 1 60%; /* Takes 60% of the width on large screens */
+    text-align: left;
+}
+
+.textblock h3 {
+    font-size: 3rem;
     font-weight: 700;
     text-transform: uppercase;
-    letter-spacing: 2px;
+    letter-spacing: 1.5px;
     margin-bottom: 10px;
     animation: fadeIn 1s ease-out;
 }
 
-.banner h1 {
-    font-size: 6rem;
+.textblock h1 {
+    font-size: 5rem;
     font-weight: 800;
     line-height: 1.2;
-    margin: 20px 0;
+    margin: 15px 0;
     text-transform: uppercase;
-    letter-spacing: 3px;
+    letter-spacing: 2px;
     animation: slideIn 1s ease-out;
 }
 
-.banner p {
-    font-size: 1.8rem;
-    margin-bottom: 30px;
-    font-weight: 400;
-    opacity: 0.8;
+.textblock h3 span {
+    color: #3a00f7; /* Highlight the job role */
 }
 
-/* Styling for Social Media Icons */
+.textblock p {
+    font-size: 1.5rem;
+    margin-bottom: 30px;
+    font-weight: 400;
+    opacity: 0.9;
+}
+
+/* Social Media Icons */
 .social-media {
     display: flex;
-    justify-content: center;
     gap: 15px;
-    margin-bottom: 30px;
+    margin-bottom: 20px;
 }
 
 .social-media a {
-    display: inline-flex;
+    display: flex;
     justify-content: center;
     align-items: center;
     width: 50px;
@@ -70,14 +89,14 @@ html, body {
     transform: scale(1.1);
 }
 
-/* Styling for the Button */
+/* Button Styling */
 .btn {
     display: inline-block;
-    padding: 1rem 3rem;
+    padding: 0.8rem 2.5rem;
     background-color: #3a00f7;
     border-radius: 30px;
     color: #fff;
-    font-size: 20px;
+    font-size: 18px;
     letter-spacing: 1px;
     text-transform: uppercase;
     transition: all 0.3s ease;
@@ -85,14 +104,14 @@ html, body {
 
 .btn:hover {
     background-color: #15034d;
-    color: #fff;
     transform: scale(1.05);
 }
 
-/* Image Styling */
+/* Right Section: Image Styling */
 .home-img {
-    width: 450px;
-    height: 450px;
+    flex: 1 1 30%; /* Takes 30% of the width on large screens */
+    max-width: 400px;
+    height: auto;
     object-fit: cover;
     border-radius: 50%;
     border: 5px solid #fff;
@@ -107,13 +126,15 @@ html, body {
 }
 
 /* Responsive Design */
-@media (max-width: 768px) {
-    .banner h1 {
+
+/* Tablets */
+@media (max-width: 992px) {
+    .textblock h1 {
         font-size: 4rem;
     }
 
-    .banner h3 {
-        font-size: 2.8rem;
+    .textblock h3 {
+        font-size: 2.5rem;
     }
 
     .social-media a {
@@ -121,14 +142,48 @@ html, body {
         height: 45px;
     }
 
+    .btn {
+        padding: 0.7rem 2rem;
+        font-size: 16px;
+    }
+
     .home-img {
-        width: 350px;
-        height: 350px;
+        max-width: 300px;
+    }
+}
+
+/* Mobile Screens */
+@media (max-width: 576px) {
+    .container {
+        flex-direction: column-reverse; /* Stack text below the image */
+        align-items: center;
+        gap: 20px;
+    }
+
+    .textblock {
+        text-align: center; /* Center-align text for mobile */
+        flex: 1 1 100%;
+    }
+
+    .textblock h1 {
+        font-size: 3rem;
+    }
+
+    .textblock h3 {
+        font-size: 2rem;
+    }
+
+    .textblock p {
+        font-size: 1.2rem;
     }
 
     .btn {
-        padding: 0.8rem 2.5rem;
-        font-size: 18px;
+        padding: 0.6rem 1.8rem;
+        font-size: 14px;
+    }
+
+    .home-img {
+        max-width: 250px;
     }
 }
 
