@@ -19,7 +19,7 @@ if (!MONGO_URI) {
 app.use(helmet());
 app.use(bodyParser.json());
 app.use(cors({
-  origin: ['http://localhost:5173', 'https://portfolio1-git-main-kalparatnas-projects.vercel.app/'], // Add your React frontend origin here
+  origin: [ 'https://portfolio1-git-main-kalparatnas-projects.vercel.app/'], // Add your React frontend origin here
   methods: ['GET', 'POST'],
 }));
 
